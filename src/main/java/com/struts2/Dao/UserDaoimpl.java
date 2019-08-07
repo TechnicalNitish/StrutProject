@@ -55,8 +55,6 @@ public class UserDaoimpl implements UserDao {
 					return false;
 				}
 			
-			
-		
 	}
 	
 	
@@ -73,7 +71,9 @@ public class UserDaoimpl implements UserDao {
 				{
 					return true;
 				}
-				else {
+				
+				else 
+				{
 					return false;
 				}
 	}

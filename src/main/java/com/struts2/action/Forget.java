@@ -8,20 +8,20 @@ import com.struts2.Dao.UserDaoimpl;
 import com.struts2.pojo.User;
 
 @Namespace("/")
-@Action(value = "forget", results = { @Result(name = "reset", location = "/reset.jsp") })
+@Action(value = "forget",results = {@Result(name = "reset",location = "/reset.jsp")})
 public class Forget {
+
 	private String email;
-	
-	
-	
-	
-	public String execute()
-	{
-		User user=new User();
-			user.setEmail(email);
-	UserDaoimpl userdaoimpl=new UserDaoimpl();
-		
-		
+
+	public String execute() {
+		User user = new User();
+		user.setEmail(email);
+		UserDaoimpl userdaoimpl = new UserDaoimpl();
+		if (userdaoimpl.forget(email)) {
+			return "reset";
+		} else {
+			return "invalid Email";
+		}
 	}
 
 	public Forget() {
